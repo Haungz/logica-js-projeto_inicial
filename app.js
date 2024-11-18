@@ -1,13 +1,13 @@
 alert("Bem vindo ao jogo do número secreto!")
-let numeroSecreto = 8
+let numeroSecreto = parseInt(Math.random() * 100 + 1)
 let chute = 0
 let tentativas  = 0
 
 while (chute != numeroSecreto){
-    chute = prompt("Escolha um número entre 1 e 10")
+    chute = prompt("Escolha um número entre 1 e 100")
     tentativas ++
     if (chute == numeroSecreto) {
-        alert(`Isso aí! Você acertou o número secreto!: ${numeroSecreto}`)
+        break
     } else if (chute > numeroSecreto) {
         alert(`Você errou! O número é menor que ${chute}!`)
     } else {
@@ -15,4 +15,5 @@ while (chute != numeroSecreto){
     }
 }
 
-alert(`Você acertou o número secreto "${numeroSecreto}" com ${tentativas} tentativas`)
+let palavraTentativas = tentativas > 1 ? "tentativas" : "tentativa"
+alert(`Você acertou o número secreto "${numeroSecreto}" com ${tentativas} ${palavraTentativas}`)
